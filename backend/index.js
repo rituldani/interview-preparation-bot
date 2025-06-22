@@ -26,7 +26,12 @@ app.use('/api/evaluation', EvaluateRouter)
 //   res.send('Hello World!')
 // })
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`)
-})
+// const PORT = process.env.PORT;
+// app.listen(PORT, () => {
+//   console.log(`Example app listening on port ${PORT}`)
+// })
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+});
