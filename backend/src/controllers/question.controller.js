@@ -5,7 +5,7 @@ export const QuestionGenerator = async(req, res) => {
     console.log("Role:", role)
 
   try {
-    const ollamaRes = await axios.post('http://localhost:11434/api/generate', {
+    const ollamaRes = await axios.post('http://172.19.16.45:11434/api/generate', {
       model: 'gemma:2b',
       prompt: `Ask 10 interview questions for a ${role} role. Include technical and behavioral.`,
       stream: false
