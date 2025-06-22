@@ -8,7 +8,7 @@ function Evaluate() {
 
     const handleEvaluate = async () => {
         try {
-            const response = await axios.post('http://localhost:3001/api/evaluation/evaluate', {
+            const response = await axios.post(`${process.env.VITE_BACKEND_URL}/api/evaluation/evaluate`, {
                 question: currentQuestion,
                 answer: transcript
             }, {
