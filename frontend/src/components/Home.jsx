@@ -41,7 +41,7 @@ function Home() {
             return toast.error("Role is required")
         }
         try {
-            const response = await axios.post(`${process.env.VITE_BACKEND_URL}/api/generator/questions`, { role: Role }, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/generator/questions`, { role: Role }, {
                 withCredentials: true
             });
             console.log(response.data.questions);

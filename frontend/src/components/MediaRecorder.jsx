@@ -24,7 +24,7 @@ function AudioRecorder() {
       formData.append('audio', audioBlob, 'answer.webm');
 
       try {
-        const res = await axios.post(`${process.env.VITE_BACKEND_URL}/api/record/transcribe`, formData, {
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/record/transcribe`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         console.log(res.data.transcription)
