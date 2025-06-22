@@ -8,8 +8,10 @@ import EvaluateRouter from "./src/routes/Evaluate.Route.js"
 const app = express()
 dotenv.config()
 
+const allowedOrigins = ['https://interview-preparation-bot-frontend.onrender.com'];
+
 app.use(cors({
-  origin: "*",
+  origin: allowedOrigins,
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
