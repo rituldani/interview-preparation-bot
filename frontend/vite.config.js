@@ -11,5 +11,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0', // 👈 expose to external
     port: process.env.PORT || 5173, // 👈 allow Render to assign the port
+    allowedHosts: ['interview-preparation-bot-frontend.onrender.com'],
   },
 })
