@@ -6,7 +6,7 @@ export const Evaluation = async (req, res) => {
     console.log(question)
     console.log(answer)
     try {
-        const EvalResponse = await axios.post('http://172.19.16.1:11434/api/generate', {
+        const EvalResponse = await axios.post('http://192.168.236.204:11434/api/generate', {
             model: 'gemma:2b',
             prompt: `You are an HR expert. Evaluate the following candidate's answer.
                         Question: ${question}
