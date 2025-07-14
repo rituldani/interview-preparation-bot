@@ -6,7 +6,9 @@ export const Evaluation = async (req, res) => {
     console.log(question)
     console.log(answer)
     try {
-        const EvalResponse = await axios.post('http://192.168.236.204:11434/api/generate', {
+        // http://192.168.236.204:11434
+        const ollamaUrl = process.env.OLLAMA_URL || 'http://localhost:11434';
+        const EvalResponse = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/generate`, {
             model: 'gemma:2b',
             prompt: `You are an HR expert. Evaluate the following candidate's answer.
                         Question: ${question}

@@ -30,9 +30,9 @@ function Evaluate() {
             {
                 (score || feedback || suggestion) ? (
                     <div className='w-[900px]'>
-                        <p className='border-2 border-zinc-500 m-4 items-start rounded-sm'><strong>Score:</strong> {score}</p>
-                        <p className='border-2 border-zinc-500 m-4 items-start rounded-sm'><strong>Feedback:</strong> {feedback}</p>
-                        <p className='border-2 border-zinc-500 m-4 items-start rounded-sm'><strong>Suggestion:</strong> {suggestion}</p>
+                        <p className='border-1 bg-[#8f2439] p-2 m-4 items-start rounded-sm'><strong>Score:</strong> {score}</p>
+                        <p className='border-1 bg-[#8f2439] p-2 m-4 items-start rounded-sm'><strong>Feedback:</strong> {feedback}</p>
+                        <p className='border-1 bg-[#8f2439] p-2 m-4 items-start rounded-sm'><strong>Suggestion:</strong> {suggestion}</p>
                     </div>
                 ) :
                     (

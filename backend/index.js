@@ -8,10 +8,19 @@ import EvaluateRouter from "./src/routes/Evaluate.Route.js"
 const app = express()
 dotenv.config()
 
-const allowedOrigins = ['https://interview-preparation-bot-frontend.onrender.com'];
-
+// const allowedOrigins = ['https://interview-preparation-bot-frontend.onrender.com', 'http://localhost:5173',];
+const allowedOrigins = [process.env.CLIENT_URL, process.env.PROD_CLIENT_URL];
+// allowedOrigins || 
 app.use(cors({
-  origin: allowedOrigins,
+  // origin: 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -35,5 +44,6 @@ app.use('/api/evaluation', EvaluateRouter)
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://0.0.0.0:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
+//  console.log(`Server running on http://0.0.0.0:${PORT}`);

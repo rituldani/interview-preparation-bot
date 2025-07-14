@@ -62,8 +62,8 @@ function Home() {
         <div>
             {questions.length > 0 ?
                 (
-                    <div className="mt-4">
-                        <div className='border-3 border-zinc-500 p-6 m-6 rounded-md w-[900px]'>
+                    <div className="items-center flex flex-col">
+                        <div className='shadow-2xs p-6 m-6 rounded-md w-[900px] bg-[#8f2439]'>
                             <p className="font-bold">Question {currentIndex + 1}:</p>
                             <p>{questions[currentIndex]}</p>
                         </div>
@@ -72,7 +72,7 @@ function Home() {
                             <p className="text-green-500 mt-4">✅ You've reached the end of the questions!</p>
                         )}
 
-                        <div className="m-6 flex justify-around ">
+                        <div className="flex justify-between gap-6">
                             <button onClick={previousQuestion}> ⬅️ Previous Question </button>
                             <button onClick={() => speak(questions[currentIndex])}> 🔊 Repeat </button>
                             <button onClick={nextQuestion}> ➡️ Next Question </button>
